@@ -1,4 +1,5 @@
 from fila_base import FilaBase
+from constants import FILA_PRIORITARIA
 
 
 class FilaPrioritaria(FilaBase):
@@ -6,7 +7,7 @@ class FilaPrioritaria(FilaBase):
         super().__init__()
 
     def gerar_senha_atual(self) -> None:
-        self.senha_atual = f"PR{self.codigo}"
+        self.senha_atual = f"{FILA_PRIORITARIA}{self.codigo}"
 
     def estatistica(self, dia: str, agencia: int, flag: str) -> dict:
         if flag != "detail":

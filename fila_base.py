@@ -1,5 +1,7 @@
 import abc
 
+from constants import *
+
 
 class FilaBase(metaclass=abc.ABCMeta):
     def __init__(self):
@@ -9,8 +11,8 @@ class FilaBase(metaclass=abc.ABCMeta):
         self.senha_atual: str = ""
 
     def reseta_fila(self) -> None:
-        if self.codigo >= 200:
-            self.codigo = 0
+        if self.codigo >= POSICAO_MAXIMA_NA_FILA:
+            self.codigo = POSICAO_INICIAL_NA_FILA
         else:
             self.codigo += 1
 

@@ -1,4 +1,5 @@
 from fila_base import FilaBase
+from constants import FILA_NORMAL
 
 
 class FilaNormal(FilaBase):
@@ -6,4 +7,4 @@ class FilaNormal(FilaBase):
         super().__init__()
 
     def gerar_senha_atual(self) -> None:
-        self.senha_atual = f"NM{self.codigo}"
+        self.senha_atual = f"{FILA_NORMAL}{self.codigo}"
