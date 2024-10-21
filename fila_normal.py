@@ -1,18 +1,12 @@
-class FilaNormal:
+from fila_base import FilaBase
+
+
+class FilaNormal(FilaBase):
     def __init__(self):
-        self.codigo = 0
-        self.fila = []
-        self.clientes_atendidos = []
-        self.senha_atual: str = ""
+        super().__init__()
 
     def gerar_senha_atual(self) -> None:
         self.senha_atual = f"NM{self.codigo}"
-
-    def reseta_fila(self) -> None:
-        if self.codigo >= 100:
-            self.codigo = 0
-        else:
-            self.codigo += 1
 
     def atualizafila(self) -> None:
         self.reseta_fila()
